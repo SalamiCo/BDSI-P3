@@ -1,24 +1,22 @@
-<!DOCTYPE inmueble [
-	<!ELEMENT anuncios (anuncio*)>
+<!ELEMENT anuncios (anuncio*)>
 
-	<!ELEMENT anuncio (superficie, precio, provincia, localidad, caracteristicas?, fotos?)>
+<!ELEMENT anuncio (superficie, precio, provincia, localidad, caracteristicas?, fotos?)>
 
-	<!ELEMENT caracteristicas (caracteristica*)>
-	<!ELEMENT fotos (foto*)>
+<!ELEMENT caracteristicas (caracteristica*)>
+<!ELEMENT fotos (foto*)>
 
-	<!ELEMENT superficie (#PCDATA)>
-	<!ELEMENT precio (#PCDATA)>
-	<!ELEMENT provincia (#PCDATA)>
-	<!ELEMENT localidad (#PCDATA)>
+<!ELEMENT superficie (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT provincia (#PCDATA)>
+<!ELEMENT localidad (#PCDATA)>
 
-	<!ELEMENT foto >
+<!ELEMENT foto (#PCDATA)>
 
-	<!ATTLIST anuncio id ID #REQUIRED>
-	<!ATTLIST anuncio idagencia IDREFS #REQUIRED>
-	<!ATTLIST anuncio tipo (pisos | casas-chalets | solares-terrenos-fincas | locales-oficinas-naves-almacenes | parkings-trasteros) "pisos">
-	<!ATTLIST anuncio operacion (venta | alquiler) "venta">
-	<!ATTLIST anuncio estado (nuevo | segunda-mano-buen-estado | segunda-mano-reformado | segunda-mano-necesita-reformar) "nuevo">
+<!ATTLIST anuncio id ID #REQUIRED>
+<!ATTLIST anuncio idagencia ID #REQUIRED>
+<!ATTLIST anuncio tipo (pisos | casas-chalets | solares-terrenos-fincas | locales-oficinas-naves-almacenes | parkings-trasteros) "pisos">
+<!ATTLIST anuncio operacion (venta | alquiler) "venta">
+<!ATTLIST anuncio estado (nuevo | segunda-mano-buen-estado | segunda-mano-reformado | segunda-mano-necesita-reformar) "nuevo">
 
-	<!ATTLIST caracteristica nombre CDATA #REQUIRED>
-	<!ATTLIST caracteristica valor CDATA #REQUIRED>
-]>
+<!ATTLIST caracteristica nombre CDATA #REQUIRED>
+<!ATTLIST caracteristica valor CDATA #REQUIRED>

@@ -1,20 +1,18 @@
-<!DOCTYPE agencia [
-	<!ELEMENT agencias (agencia*)>
+<!ELEMENT agencias (agencia*)>
 
-	<!ELEMENT agencia (nombre, direccion?, provincia, localidad?, cp?, telefonos?, email, web?)>
+<!ELEMENT agencia (nombre, direccion?, provincia, localidad?, cp?, telefonos?, email, web?)>
 
-	<!ELEMENT nombre (#PCDATA)>
-	<!ELEMENT direccion (#PCDATA)>
-	<!ELEMENT provincia (#PCDATA)>
-	<!ELEMENT localidad (#PCDATA)>
-	<!ELEMENT cp (#PCDATA)>
-	<!ELEMENT telefonos (telefono*)>
-	<!ELEMENT email (#PCDATA)>
-	<!ELEMENT web (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT provincia (#PCDATA)>
+<!ELEMENT localidad (#PCDATA)>
+<!ELEMENT cp (#PCDATA)>
+<!ELEMENT telefonos (telefono*)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT web (#PCDATA)>
 
-	<!ELEMENT telefono (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
 
-	<!ATTLIST agencia id ID #REQUIRED>
-	<!ATTLIST telefono tipo (movil | fijo | fax) "movil">
-	<!ATTLIST email contacto CDATA #REQUIRED>
-]>
+<!ATTLIST agencia id ID #REQUIRED>
+<!ATTLIST telefono tipo (movil | fijo | fax) "movil">
+<!ATTLIST email contacto CDATA #REQUIRED>
