@@ -16,3 +16,18 @@
 <!ATTLIST agencia id ID #REQUIRED>
 <!ATTLIST telefono tipo (movil | fijo | fax) "movil">
 <!ATTLIST email contacto CDATA #REQUIRED>
+
+<agencias>
+	<agencia id="">
+		<nombre></nombre>
+		<direccion></direccion>
+		<provincia></provincia>
+		<localidad></localidad>
+		<cp></cp>
+		<telefonos>
+			<telefono tipo=""></telefono>
+		</telefonos>
+		<email contacto=""></email>
+		<web></web>
+	</agencia>
+</agencias>

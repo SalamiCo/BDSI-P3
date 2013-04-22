@@ -10,6 +10,8 @@
 <!ELEMENT provincia (#PCDATA)>
 <!ELEMENT localidad (#PCDATA)>
 
+<!ELEMENT caracteristica (#PCDATA)>
+
 <!ELEMENT foto (#PCDATA)>
 
 <!ATTLIST anuncio id ID #REQUIRED>
@@ -20,3 +22,18 @@
 
 <!ATTLIST caracteristica nombre CDATA #REQUIRED>
 <!ATTLIST caracteristica valor CDATA #REQUIRED>
+
+<anuncios>
+	<anuncio id="" idagencia="" tipo="" operacion="" estado="">
+		<superficie></superficie>
+		<precio></precio>
+		<provincia></provincia>
+		<localidad></localidad>
+		<caracteristicas>
+			<caracteristica nombre="" valor=""></caracteristica>
+		</caracteristica>
+		<fotos>
+			<foto></foto>
+		</fotos>
+	</anuncio>
+</anuncios>
