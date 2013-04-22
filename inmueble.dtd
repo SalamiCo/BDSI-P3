@@ -1,45 +1,24 @@
 <!DOCTYPE inmueble [
-	<!ELEMENT inmueble (tipo?, operacion?, estado+, info?, opcional?, fotos*)>
-	
-	<!ELEMENT info (m2?, precio?, provincia?, localidad?)>
-	<!ELEMENT opcional (dormitorios?, banos?, piscinaGrande?, piscinaSal?, soleado?)>
-	<!ELEMENT fotos >
+	<!ELEMENT anuncios (anuncio*)>
 
-	<!ELEMENT m2 (#PCDATA)>
+	<!ELEMENT anuncio (superficie, precio, provincia, localidad, caracteristicas?, fotos?)>
+
+	<!ELEMENT caracteristicas (caracteristica*)>
+	<!ELEMENT fotos (foto*)>
+
+	<!ELEMENT superficie (#PCDATA)>
 	<!ELEMENT precio (#PCDATA)>
 	<!ELEMENT provincia (#PCDATA)>
 	<!ELEMENT localidad (#PCDATA)>
 
-	<!ELEMENT dormitorios (#PCDATA)>
-	<!ELEMENT banos (#PCDATA)>
-	<!ELEMENT piscinaGrande (#PCDATA)>
-	<!ELEMENT piscinaSal (#PCDATA)>
-	<!ELEMENT soleado (#PCDATA)>
+	<!ELEMENT foto >
 
 	<!ATTLIST anuncio id ID #REQUIRED>
 	<!ATTLIST anuncio idagencia IDREFS #REQUIRED>
-	<!ATTLIST anuncio tipo (pisos | casas y chalets | solares, terrenos y fincas, locales, oficinas, naves y almacenes | parkings o trasteros) "pisos">
+	<!ATTLIST anuncio tipo (pisos | casas-chalets | solares-terrenos-fincas | locales-oficinas-naves-almacenes | parkings-trasteros) "pisos">
 	<!ATTLIST anuncio operacion (venta | alquiler) "venta">
-	<!ATTLIST anuncio estado (nuevo | segunda mano buen estado | segunda mano reformado | segunda mano necesita reformar) "nuevo">
-]>
+	<!ATTLIST anuncio estado (nuevo | segunda-mano-buen-estado | segunda-mano-reformado | segunda-mano-necesita-reformar) "nuevo">
 
-EJEMPLO
-<anuncio id="" idagencia="" tipo"" operacion="" estado""> 
-	<tipo> </tipo> (PISOS) (CASAS Y CHALETS) (SOLARES, TERRENOS Y FINCAS) (LOCALES, OFICINAS, NAVES Y ALMACENES) (PARKINGS O TRASTEROS) 
-	<operacion> </operacion> VENTA O ALQUILER
-	<estado> </estado> OBLIGATORIO -> NUEVO, SEGUNDA MANO BUEN ESTADO, SEGUNDA MANO REFORMADO, SEGUNDA MANO NECESITA REFORMAR
-	<info>
-		<m2> </m2>
-		<precio> </precio>
-		<provincia> </provincia>
-		<localidad> </localidad>
-	</info>
-	<opcional> INFORMACION OPCIONAL PROPORCIONADA POR LA AGENCIA, SE PUEDEN AÑADIR MAS INFO
-		<dormitorios> </dormitorios>
-		<banos> </banos>
-		<piscinaGrande> </piscinaGrande>
-		<piscinaSal> </piscinaSal>
-		<soleado> </soleado>
-	</opcional>
-	<fotos> </fotos> OPCIONAL -> NUMERO VARIABLE DE FOTOS
-</anuncio>
+	<!ATTLIST caracteristica nombre CDATA #REQUIRED>
+	<!ATTLIST caracteristica valor CDATA #REQUIRED>
+]>
