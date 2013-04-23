@@ -1,4 +1,5 @@
 *.class
+output.txt
 
 # Package Files #
 *.war

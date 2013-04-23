@@ -46,6 +46,11 @@ public class Main {
         System.out.println();
         System.out.println("     <salida>  Ruta del fichero de salida.");
         System.out.println("               Puede usarse - para mostrar la salida en stdout.");
+        System.out.println();
+        System.out.println("El fichero de consultas debe incluir un núero arbitrario de consultas,");
+        System.out.println("encabezadas cada una de ellas por una línea que comience por // y especifique");
+        System.out.println("un título para la consulta.  Las líneas en blanco se ignorarán, y las");
+        System.out.println("consultas pueden extenderse varias líneas.");
     }
     
     private static BufferedReader openInput (String path) throws IOException {
@@ -60,7 +65,8 @@ public class Main {
         if (path.equals("-")) {
             return new PrintWriter(new OutputStreamWriter(System.out));
         } else {
-            return new PrintWriter(Files.newBufferedWriter(Paths.get(path), UTF_8, StandardOpenOption.CREATE));
+            return new PrintWriter(Files.newBufferedWriter(
+                Paths.get(path), UTF_8, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING));
         }
     }
     
@@ -101,7 +107,7 @@ public class Main {
                 if (!Files.exists(agenciesPath) || !Files.isRegularFile(agenciesPath)) {
                     throw new FileNotFoundException(agenciesPath.toString());
                 }
-                XMLResource agenciesDoc = (XMLResource) collection.createResource(null, "XMLResource");
+                XMLResource agenciesDoc = (XMLResource) collection.createResource("agencia.xml", "XMLResource");
                 agenciesDoc.setContent(agenciesPath.toFile());
                 collection.storeResource(agenciesDoc);
                 
@@ -110,13 +116,9 @@ public class Main {
                 if (!Files.exists(advertsPath) || !Files.isRegularFile(advertsPath)) {
                     throw new FileNotFoundException(advertsPath.toString());
                 }
-                XMLResource advertDoc = (XMLResource) collection.createResource(null, "XMLResource");
+                XMLResource advertDoc = (XMLResource) collection.createResource("inmueble.xml", "XMLResource");
                 advertDoc.setContent(advertsPath.toFile());
                 collection.storeResource(advertDoc);
-                
-                XPathQueryService service = (XPathQueryService) collection.getService("XPathQueryService", "1.0");
-                service.setProperty("pretty", "true");
-                service.setProperty("encoding", "UTF-8");
                 
                 List<String> titles = new ArrayList<>();
                 List<String> queries = new ArrayList<>();
@@ -138,14 +140,14 @@ public class Main {
                                 }
                                 
                                 query.setLength(0);
-                                title = line.substring(2);
+                                title = line.substring(2).trim();
                                 
                             } else {
                                 query.append(line).append('\n');
                             }
                         }
                     }
-
+                    
                     if (query.length() != 0) {
                         titles.add(title);
                         queries.add(query.toString().trim());
@@ -153,25 +155,34 @@ public class Main {
                     
                 }
                 
+                XPathQueryService xquery = (XPathQueryService) collection.getService("XPathQueryService", "1.0");
+                xquery.setProperty("pretty", "true");
+                xquery.setProperty("encoding", "ISO-8859-1");
+                
                 // Salida
                 assert titles.size() == queries.size();
                 try (PrintWriter output = openOutput(argOutput)) {
                     for (int i = 0; i < titles.size(); i++) {
-                        ResourceSet result = service.query(queries.get(i));
+                        output.println(titles.get(i));
+                        output.println("--------");
+                        output.println("Input: -----");
+                        output.println("  " + queries.get(i).replace("\n", "\n  "));
+                        output.println("Output:");
                         
-                        ResourceIterator it = result.getIterator();
-                        while (it.hasMoreResources()) {
-                            Resource res = it.nextResource();
-                            
-                            output.println(titles.get(i));
-                            output.println("--------");
-                            output.println("Input: -----");
-                            output.println(queries.get(i));
-                            output.println("Output:");
-                            output.println(res.getContent());
-                            output.println();
-                            output.flush();
+                        ResourceSet result = xquery.query(queries.get(i));
+                        if (result.getSize() == 0) {
+                            output.println("  [Sin resultados]");
+                        } else {
+                            ResourceIterator it = result.getIterator();
+                            while (it.hasMoreResources()) {
+                                Resource res = it.nextResource();
+                                
+                                output.println(res.getContent());
+                            }
                         }
+                        
+                        output.println();
+                        output.flush();
                     }
                 }
             }
