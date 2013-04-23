@@ -12,7 +12,7 @@
 			<caracteristica nombre="baños" valor="3"/>
 			<caracteristica nombre="piscina" valor="si"/>
 			<caracteristica nombre="pistaPadel" valor="si"/>
-		</caracteristica>
+		</caracteristicas>
 		<fotos>
 			<foto>www.salamico.com/g7f89a8y6g</foto>
 			<foto>www.salamico.com/7f8d9syg98</foto>
@@ -29,7 +29,7 @@
 			<caracteristica nombre="dormitorios" valor="4"/>
 			<caracteristica nombre="baños" valor="2"/>
 			<caracteristica nombre="terraza" valor="si"/>
-		</caracteristica>
+		</caracteristicas>
 		<fotos>
 			<foto>www.salamico.com/gerw9gidgd</foto>
 			<foto>www.salamico.com/gmjwstu9we</foto>
@@ -44,7 +44,7 @@
 		<caracteristicas>
 			<caracteristica nombre="numero-plantas" valor="3"/>
 			<caracteristica nombre="numero-entradas" valor="2"/>
-		</caracteristica>
+		</caracteristicas>
 		<fotos>
 			<foto>www.chorizoco.com/gerw563534</foto>
 			<foto>www.chorizoco.com/gdfnuwy82w</foto>
@@ -60,7 +60,7 @@
 		<localidad>Caceres</localidad>
 		<caracteristicas>
 			<caracteristica nombre="terreno" valor="tierra"/>
-		</caracteristica>
+		</caracteristicas>
 		<fotos>
 			<foto>www.chorizoco.com/gjfe8ut320</foto>
 		</fotos>
@@ -74,7 +74,7 @@
 		<caracteristicas>
 			<caracteristica nombre="ventanas" valor="no"/>
 			<caracteristica nombre="puerta-grande" valor="si"/>
-		</caracteristica>
+		</caracteristicas>
 		<fotos>
 			<foto>www.pavoco.com/8g09dehgt8</foto>
 			<foto>www.pavoco.com/fgdigwugeg</foto>
@@ -91,7 +91,7 @@
 			<caracteristica nombre="numero-entradas" valor="2"/>
 			<caracteristica nombre="baños" valor="3"/>
 			<caracteristica nombre="numero-plantas" valor="2"/>
-		</caracteristica>
+		</caracteristicas>
 		<fotos>
 			<foto>www.pavoco.com/hgd97yg9ew</foto>
 			<foto>www.pavoco.com/fsua90fusa</foto>
@@ -114,7 +114,7 @@
 			<caracteristica nombre="dormitorios" valor="7"/>
 			<caracteristica nombre="baños" valor="4"/>
 			<caracteristica nombre="numero-plantas" valor="3"/>
-		</caracteristica>
+		</caracteristicas>
 		<fotos>
 			<foto>www.easycasas.com/84hg7fd8</foto>
 			<foto>www.easycasas.com/fds8y9gy</foto>
@@ -133,7 +133,7 @@
 			<caracteristica nombre="calefaccion" valor="si"/>
 			<caracteristica nombre="dormitorios" valor="4"/>
 			<caracteristica nombre="baños" valor="2"/>
-		</caracteristica>
+		</caracteristicas>
 		<fotos>
 			<foto>www.easycasas.com/98fad789</foto>
 			<foto>www.easycasas.com/fgdas7ga</foto>
@@ -149,7 +149,7 @@
 		<caracteristicas>
 			<caracteristica nombre="amplia" valor="si"/>
 			<caracteristica nombre="numero-plazas" valor="2"/>
-		</caracteristica>
+		</caracteristicas>
 		<fotos>
 			<foto>www.ryancasas.com/854620hg6f</foto>
 		</fotos>
@@ -163,7 +163,7 @@
 		<caracteristicas>
 			<caracteristica nombre="terreno" valor="hierba"/>
 			<caracteristica nombre="riego" valor="si"/>
-		</caracteristica>
+		</caracteristicas>
 		<fotos>
 			<foto>www.ryancasas.com/798gfd8as9</foto>
 			<foto>www.ryancasas.com/gjdjngdgmd</foto>
