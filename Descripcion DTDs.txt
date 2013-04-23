@@ -1,0 +1,39 @@
+Práctica 3 - Daniel Escoz Solana - Pedro Morgado Alarcón - Grupo 37
+
+agencias.dtd
+------------
+Tiene un elemento raíz 'agencias' que engloba todos las agencias. Este elemento puede ser vacío o tener uno o varios sub-elementos 'agencia'.
+
+El elemento 'agencia' es el que recoge todos los datos de cada agencia. Este elemento tiene un atributo 'id', que es el id único de la agencia. Cada elemento 'agencia' tiene los siguientes sub-elementos: nombre, direccion, provincia, localidad, cp, telefonos, email y web.
+
+El elemento 'nombre' es obligatorio.
+
+El elemento 'direccion' no es obligatorio y solo puede ponerse una direccion por agencia.
+
+El elemento 'provincia' es obligatorio.
+
+El elemento 'localidad' no es obligatorio y cada agencia pertenece a una localidad.
+
+El elemento cp  no es obligatorio y cada agencia solo puede tener un código postal.
+
+El elemento 'teléfonos' contiene todos los teléfonos de la empresa, que se guardaran en sub-elementos 'teléfono'. Cada elemento 'teléfono' tiene un atributo 'tipo' que puede tener los siguientes valores: fijo, movil o fax.
+
+El elemento 'email' tiene un atributo 'contacto' que guarda la persona propietaria del email. El email es obligatorio.
+
+El elemento 'web' es opcional y solo se puede poner una web.
+
+
+
+
+
+inmueble.dtd
+------------
+Tiene un elemento raíz 'anuncios' que engloba todos los anuncios. Este elemento puede estar vacío o tener uno o varios sub-elementos 'inmueble'.
+
+El elemento 'inmueble' tiene los siguientes atributos: 'id' (id único del anuncio), 'idagencia' (id de la agencia que ha puesto el anuncio), 'tipo' (pisos, casas-chalets, solares-terrenos-fincas, locales-oficinas-naves-almacenes o parkings-trasteros), 'operacion' (venta o alguiler) y 'estado' (nuevo, segunda-mano-buen-estado, segunda-mano-reformado o segunda-mano-necesita-reformar). Este elemento tiene los siguientes sub-elementos: superficie, precio, provincia, localidad, caracteristicas y fotos.
+
+El elemento 'superficie', 'precio', 'provincia' y 'localidad' son obligatorio.
+
+El elemento 'caracteristicas' contiene todas las características que proporciona la agencia, que se guardarán en sub-elementos 'caracteristica'. Cada elemento 'caracteristica' tiene el atributo 'nombre', que guarda el nombre de la característica (por ejemplo, dormitorios, baños, piscina...) y el atributo 'valor' que guarda el valor de la característica (por ejemplo, 'dormitorios' 2, 'baños' 3, 'piscina' si...).
+
+El elemento 'fotos' guarda las fotos del inmueble en sub-elementos 'foto'.
