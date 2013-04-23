@@ -1,0 +1,9 @@
+Consulta 1: Listar el nombre de las agencias
+--------
+Input: -----
+  for $a in doc('agencia.xml')//agencias/agencia
+  let $b := doc('inmueble.xml')//anuncios/anuncio[@idagencia = $a/@id]
+  where $a/provincia = 'Madrid'
+  return <agencia>{$a/nombre}<anuncios>{count($b)}</anuncios></agencia>
+Output:
+
