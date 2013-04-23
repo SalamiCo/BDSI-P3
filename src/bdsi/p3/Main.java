@@ -89,7 +89,7 @@ public class Main {
                 DatabaseManager.registerDatabase(db);
                 
                 String user = "admin";
-                String pass = "pechotes";
+                String pass = "XMLFdILABs";
                 
                 String colUrl = URL_COLLECTION_BASE + "/" + argCollection;
                 Collection collection = DatabaseManager.getCollection(colUrl, user, pass);
