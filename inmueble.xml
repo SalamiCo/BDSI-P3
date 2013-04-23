@@ -170,4 +170,34 @@
 			<foto>www.ryancasas.com/gdu8g9d08g</foto>
 		</fotos>
 	</anuncio>
+
+	<anuncio id="id11" idagencia="id05" tipo="casas-chalets" operacion="venta" estado="nuevo">
+		<superficie>300</superficie>
+		<precio>300000</precio>
+		<provincia>Madrid</provincia>
+		<localidad>Valdemorillo</localidad>
+		<caracteristicas>
+			<caracteristica nombre="dormitorios" valor="4"/>
+		</caracteristicas>
+		<fotos>
+			<foto>www.ryancasas.com/798gfd8as9</foto>
+			<foto>www.ryancasas.com/gjdjngdgmd</foto>
+			<foto>www.ryancasas.com/gdu8g9d08g</foto>
+		</fotos>
+	</anuncio>
+
+	<anuncio id="id12" idagencia="id02" tipo="casas-chalets" operacion="alquiler" estado="nuevo">
+		<superficie>200</superficie>
+		<precio>400000</precio>
+		<provincia>Madrid</provincia>
+		<localidad>Valdemorillo</localidad>
+		<caracteristicas>
+			<caracteristica nombre="dormitorios" valor="4"/>
+		</caracteristicas>
+		<fotos>
+			<foto>www.chorizoco.com/798gfd8as9</foto>
+			<foto>www.chorizoco.com/gjdjngdgmd</foto>
+			<foto>www.chorizoco.com/gdu8g9d08g</foto>
+		</fotos>
+	</anuncio>
 </anuncios>

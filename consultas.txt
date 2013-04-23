@@ -13,4 +13,11 @@ return <pisos>{$a/provincia, $a/localidad, $a/superficie, $a/precio}<estado>{dat
         <agencia>{$b/nombre}</agencia></pisos>
 
 //Consulta 3
+for $a in doc('inmueble.xml')//anuncios/anuncio[@tipo = 'casas-chalets'][@estado = 'nuevo']
+let $b := doc('agencia.xml')//agencias/agencia[@id = $a/@idagencia]
+let $c := $a/precio
+where $b/cp = 28210 and $c < 500000
+order by $b/@id, $c
+return <chalets>{$a/precio, $a/provincia, $a/localidad}
+		<agencia><id>{data($b/@id)}</id>{$b/nombre, $b/provincia, $b/localidad, $b/cp}</agencia></chalets>
 
