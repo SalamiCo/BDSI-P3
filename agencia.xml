@@ -1,2 +1,73 @@
 <?xml version="1.0"?>
 <!DOCTYPE agencia SYSTEM "agencia.dtd">
+
+<agencias>
+	<agencia id="id01">
+		<nombre>SalamiCo</nombre>
+		<direccion>C/Falsa 123</direccion>
+		<provincia>Madrid</provincia>
+		<localidad>Guadarrama</localidad>
+		<cp>28440</cp>
+		<telefonos>
+			<telefono tipo="fijo">918546578</telefono>
+			<telefono tipo="fax">918547685</telefono>
+		</telefonos>
+		<email contacto="Pedro">pedro@pedro.pedro</email>
+		<web>www.salamico.com</web>
+	</agencia>
+
+	<agencia id="id02">
+		<nombre>ChorizoCo</nombre>
+		<direccion>C/Verdadera 456</direccion>
+		<provincia>Madrid</provincia>
+		<localidad>Madrid</localidad>
+		<cp>28099</cp>
+		<telefonos>
+			<telefono tipo="fijo">914157658</telefono>
+			<telefono tipo="movil">666999666</telefono>
+		</telefonos>
+		<email contacto="Dani">dani@dani.dani</email>
+		<web>www.chorizo.com</web>
+	</agencia>
+
+	<agencia id="id03">
+		<nombre>PavoCo</nombre>
+		<direccion>C/Piruleta 75</direccion>
+		<provincia>Alicante</provincia>
+		<localidad>Benidorm</localidad>
+		<cp>46487</cp>
+		<telefonos>
+			<telefono tipo="fax">965482934</telefono>
+			<telefono tipo="fax">965489844</telefono>
+		</telefonos>
+		<email contacto="Homer">homer@homer.homer</email>
+		<web>www.pavoco.com</web>
+	</agencia>
+
+	<agencia id="id04">
+		<nombre>Easy Casas</nombre>
+		<direccion>C/Aire 84</direccion>
+		<provincia>Barcelona</provincia>
+		<localidad>Casteldefels</localidad>
+		<cp>83432</cp>
+		<telefonos>
+			<telefono tipo="movil">675854843</telefono>
+		</telefonos>
+		<email contacto="Gervasio">gervasio@gervasio.gervasio</email>
+		<web>www.easycasas.com</web>
+	</agencia>
+
+	<agencia id="id05">
+		<nombre>Ryancasas</nombre>
+		<direccion>C/Sin Cemento 575</direccion>
+		<provincia>Madrid</provincia>
+		<localidad>Madrid</localidad>
+		<cp>28575</cp>
+		<telefonos>
+			<telefono tipo="fijo">917568495</telefono>
+			<telefono tipo="movil">675845943</telefono>
+		</telefonos>
+		<email contacto="Ryan">ryan@ryan.ryan</email>
+		<web>www.ryancasas.com</web>
+	</agencia>
+</agencias>

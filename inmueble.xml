@@ -1,2 +1,173 @@
 <?xml version="1.0"?>
 <!DOCTYPE inmueble SYSTEM "inmueble.dtd">
+
+<anuncios>
+	<anuncio id="id01" idagencia="id01" tipo="casas-chalets" operacion="venta" estado="segunda-mano-buen-estado">
+		<superficie>300</superficie>
+		<precio>500000</precio>
+		<provincia>Madrid</provincia>
+		<localidad>Las Rozas</localidad>
+		<caracteristicas>
+			<caracteristica nombre="dormitorios" valor="5"/>
+			<caracteristica nombre="baños" valor="3"/>
+			<caracteristica nombre="piscina" valor="si"/>
+			<caracteristica nombre="pistaPadel" valor="si"/>
+		</caracteristica>
+		<fotos>
+			<foto>www.salamico.com/g7f89a8y6g</foto>
+			<foto>www.salamico.com/7f8d9syg98</foto>
+			<foto>www.salamico.com/gdf0g8s9d8</foto>
+		</fotos>
+	</anuncio>
+
+	<anuncio id="id01" idagencia="id01" tipo="pisos" operacion="alquiler" estado="nuevo">
+		<superficie>150</superficie>
+		<precio>300</precio>
+		<provincia>Madrid</provincia>
+		<localidad>Majadahonda</localidad>
+		<caracteristicas>
+			<caracteristica nombre="dormitorios" valor="4"/>
+			<caracteristica nombre="baños" valor="2"/>
+			<caracteristica nombre="terraza" valor="si"/>
+		</caracteristica>
+		<fotos>
+			<foto>www.salamico.com/gerw9gidgd</foto>
+			<foto>www.salamico.com/gmjwstu9we</foto>
+		</fotos>
+	</anuncio>
+
+	<anuncio id="id03" idagencia="id02" tipo="locales-oficinas-naves-almacenes" operacion="venta" estado="segunda-mano-reformado">
+		<superficie>1000</superficie>
+		<precio>600000</precio>
+		<provincia>Salamanca</provincia>
+		<localidad>Topas</localidad>
+		<caracteristicas>
+			<caracteristica nombre="numero-plantas" valor="3"/>
+			<caracteristica nombre="numero-entradas" valor="2"/>
+		</caracteristica>
+		<fotos>
+			<foto>www.chorizoco.com/gerw563534</foto>
+			<foto>www.chorizoco.com/gdfnuwy82w</foto>
+			<foto>www.chorizoco.com/grwu09798g</foto>
+			<foto>www.chorizoco.com/u8gw9f8gwf</foto>
+		</fotos>
+	</anuncio>
+
+	<anuncio id="id04" idagencia="id02" tipo="solares-terrenos-fincas" operacion="venta" estado="segunda-mano-necesita-reformar">
+		<superficie>2000</superficie>
+		<precio>400000</precio>
+		<provincia>Caceres</provincia>
+		<localidad>Caceres</localidad>
+		<caracteristicas>
+			<caracteristica nombre="terreno" valor="tierra"/>
+		</caracteristica>
+		<fotos>
+			<foto>www.chorizoco.com/gjfe8ut320</foto>
+		</fotos>
+	</anuncio>
+
+	<anuncio id="id05" idagencia="id03" tipo="parkings-trasteros" operacion="alquiler" estado="segunda-mano-buen-estado">
+		<superficie>50</superficie>
+		<precio>200</precio>
+		<provincia>Barcelona</provincia>
+		<localidad>Barcelona</localidad>
+		<caracteristicas>
+			<caracteristica nombre="ventanas" valor="no"/>
+			<caracteristica nombre="puerta-grande" valor="si"/>
+		</caracteristica>
+		<fotos>
+			<foto>www.pavoco.com/8g09dehgt8</foto>
+			<foto>www.pavoco.com/fgdigwugeg</foto>
+		</fotos>
+	</anuncio>
+
+	<anuncio id="id06" idagencia="id03" tipo="locales-oficinas-naves-almacenes" operacion="alquiler" estado="segunda-mano-reformado">
+		<superficie>170</superficie>
+		<precio>500</precio>
+		<provincia>Santander</provincia>
+		<localidad>Santander</localidad>
+		<caracteristicas>
+			<caracteristica nombre="calefaccion" valor="si"/>
+			<caracteristica nombre="numero-entradas" valor="2"/>
+			<caracteristica nombre="baños" valor="3"/>
+			<caracteristica nombre="numero-plantas" valor="2"/>
+		</caracteristica>
+		<fotos>
+			<foto>www.pavoco.com/hgd97yg9ew</foto>
+			<foto>www.pavoco.com/fsua90fusa</foto>
+			<foto>www.pavoco.com/gbfds98gyg</foto>
+			<foto>www.pavoco.com/g8d0as8gds</foto>
+			<foto>www.pavoco.com/htid09guds</foto>
+			<foto>www.pavoco.com/hfsg98adgf</foto>
+		</fotos>
+	</anuncio>
+
+	<anuncio id="id07" idagencia="id04" tipo="casas-chalets" operacion="venta" estado="nuevo">
+		<superficie>700</superficie>
+		<precio>600000</precio>
+		<provincia>Madrid</provincia>
+		<localidad>Pozuelo</localidad>
+		<caracteristicas>
+			<caracteristica nombre="piscina" valor="si"/>
+			<caracteristica nombre="calefaccion" valor="si"/>
+			<caracteristica nombre="jardin" valor="si"/>
+			<caracteristica nombre="dormitorios" valor="7"/>
+			<caracteristica nombre="baños" valor="4"/>
+			<caracteristica nombre="numero-plantas" valor="3"/>
+		</caracteristica>
+		<fotos>
+			<foto>www.easycasas.com/84hg7fd8</foto>
+			<foto>www.easycasas.com/fds8y9gy</foto>
+			<foto>www.easycasas.com/8b9vdsay</foto>
+			<foto>www.easycasas.com/te89wyg9</foto>
+			<foto>www.easycasas.com/gdsu0gs9</foto>
+		</fotos>
+	</anuncio>
+
+	<anuncio id="id08" idagencia="id04" tipo="pisos" operacion="alquiler" estado="segunda-mano-buen-estado">
+		<superficie>300</superficie>
+		<precio>800</precio>
+		<provincia>Madrid</provincia>
+		<localidad>Madrid</localidad>
+		<caracteristicas>
+			<caracteristica nombre="calefaccion" valor="si"/>
+			<caracteristica nombre="dormitorios" valor="4"/>
+			<caracteristica nombre="baños" valor="2"/>
+		</caracteristica>
+		<fotos>
+			<foto>www.easycasas.com/98fad789</foto>
+			<foto>www.easycasas.com/fgdas7ga</foto>
+			<foto>www.easycasas.com/5098432h</foto>
+		</fotos>
+	</anuncio>
+
+	<anuncio id="id09" idagencia="id05" tipo="parkings-trasteros" operacion="alquiler" estado="nuevo">
+		<superficie>10</superficie>
+		<precio>100</precio>
+		<provincia>Sevilla</provincia>
+		<localidad>Sevilla</localidad>
+		<caracteristicas>
+			<caracteristica nombre="amplia" valor="si"/>
+			<caracteristica nombre="numero-plazas" valor="2"/>
+		</caracteristica>
+		<fotos>
+			<foto>www.ryancasas.com/854620hg6f</foto>
+		</fotos>
+	</anuncio>
+
+	<anuncio id="id10" idagencia="id05" tipo="solares-terrenos-fincas" operacion="venta" estado="segunda-mano-reformado">
+		<superficie>10000</superficie>
+		<precio>700000</precio>
+		<provincia>Toledo</provincia>
+		<localidad>Toledo</localidad>
+		<caracteristicas>
+			<caracteristica nombre="terreno" valor="hierba"/>
+			<caracteristica nombre="riego" valor="si"/>
+		</caracteristica>
+		<fotos>
+			<foto>www.ryancasas.com/798gfd8as9</foto>
+			<foto>www.ryancasas.com/gjdjngdgmd</foto>
+			<foto>www.ryancasas.com/gdu8g9d08g</foto>
+		</fotos>
+	</anuncio>
+</anuncios>
