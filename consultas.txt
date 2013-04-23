@@ -5,6 +5,9 @@ where $a/provincia = 'Madrid'
 return <agencia>{$a/nombre}<anuncios>{count($b)}</anuncios></agencia>
 
 // Consulta 2: Listar todos los anuncios de la primera agencia
+for $a in doc('inmueble.xml')//anuncios/anuncio[@operacion = 'alquiler'][@tipo = 'pisos']
+where $a/caracteristicas/caracteristica[@nombre = 'dormitorios'][@valor = 2]
+return <pisos>{$a/provincia, $a/localidad, $a/superficie, $a/precio}</pisos>
 
 //Consulta 3
 
