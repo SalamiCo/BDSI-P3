@@ -1,6 +1,7 @@
 package bdsi.p3;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -10,6 +11,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.exist.xmldb.DatabaseImpl;
 import org.xmldb.api.DatabaseManager;
@@ -95,54 +98,79 @@ public class Main {
                 
                 // Cargamos y almacenamos las agencias
                 Path agenciesPath = Paths.get(argAgencies);
+                if (!Files.exists(agenciesPath) || !Files.isRegularFile(agenciesPath)) {
+                    throw new FileNotFoundException(agenciesPath.toString());
+                }
                 XMLResource agenciesDoc = (XMLResource) collection.createResource(null, "XMLResource");
                 agenciesDoc.setContent(agenciesPath.toFile());
                 collection.storeResource(agenciesDoc);
                 
                 // Cargamos y almacenamos los anuncios
                 Path advertsPath = Paths.get(argAdverts);
+                if (!Files.exists(advertsPath) || !Files.isRegularFile(advertsPath)) {
+                    throw new FileNotFoundException(advertsPath.toString());
+                }
                 XMLResource advertDoc = (XMLResource) collection.createResource(null, "XMLResource");
-                agenciesDoc.setContent(advertsPath.toFile());
+                advertDoc.setContent(advertsPath.toFile());
                 collection.storeResource(advertDoc);
                 
                 XPathQueryService service = (XPathQueryService) collection.getService("XPathQueryService", "1.0");
                 service.setProperty("pretty", "true");
                 service.setProperty("encoding", "UTF-8");
                 
-                // Abrimos los streams de entrada y salida
-                try (BufferedReader input = openInput(argQueries); PrintWriter output = openOutput(argOutput)) {
-                    int num = 1;
-                    
+                List<String> titles = new ArrayList<>();
+                List<String> queries = new ArrayList<>();
+                
+                // Entrada
+                try (BufferedReader input = openInput(argQueries)) {
                     // Leemos las consultas línea a línea
                     String line;
                     String title = null;
-                    while (null != (line = input.readLine().trim())) {
+                    StringBuilder query = new StringBuilder();
+                    while (null != (line = input.readLine())) {
+                        line = line.trim();
+                        
                         if (!line.equals("")) {
                             if (line.startsWith("//")) {
+                                if (query.length() != 0) {
+                                    titles.add(title);
+                                    queries.add(query.toString().trim());
+                                }
+                                
+                                query.setLength(0);
                                 title = line.substring(2);
                                 
                             } else {
-                                if (title == null) {
-                                    title = String.format("Consulta %d:", num);
-                                }
-                                
-                                num++;
-                                ResourceSet result = service.query("for $b in doc('agenda.xml')");
-                                
-                                ResourceIterator it = result.getIterator();
-                                while (it.hasMoreResources()) {
-                                    Resource res = it.nextResource();
-                                    
-                                    output.println(title);
-                                    output.println("--------");
-                                    output.println("Input: -----");
-                                    output.println(line);
-                                    output.println("Output:");
-                                    output.println(res.getContent());
-                                    output.println();
-                                    output.flush();
-                                }
+                                query.append(line).append('\n');
                             }
+                        }
+                    }
+
+                    if (query.length() != 0) {
+                        titles.add(title);
+                        queries.add(query.toString().trim());
+                    }
+                    
+                }
+                
+                // Salida
+                assert titles.size() == queries.size();
+                try (PrintWriter output = openOutput(argOutput)) {
+                    for (int i = 0; i < titles.size(); i++) {
+                        ResourceSet result = service.query(queries.get(i));
+                        
+                        ResourceIterator it = result.getIterator();
+                        while (it.hasMoreResources()) {
+                            Resource res = it.nextResource();
+                            
+                            output.println(titles.get(i));
+                            output.println("--------");
+                            output.println("Input: -----");
+                            output.println(queries.get(i));
+                            output.println("Output:");
+                            output.println(res.getContent());
+                            output.println();
+                            output.flush();
                         }
                     }
                 }
