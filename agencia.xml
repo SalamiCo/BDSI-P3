@@ -20,8 +20,8 @@
 		<nombre>ChorizoCo</nombre>
 		<direccion>C/Verdadera 456</direccion>
 		<provincia>Madrid</provincia>
-		<localidad>Madrid</localidad>
-		<cp>28099</cp>
+		<localidad>Valdemorillo</localidad>
+		<cp>28210</cp>
 		<telefonos>
 			<telefono tipo="fijo">914157658</telefono>
 			<telefono tipo="movil">666999666</telefono>
@@ -61,8 +61,8 @@
 		<nombre>Ryancasas</nombre>
 		<direccion>C/Sin Cemento 575</direccion>
 		<provincia>Madrid</provincia>
-		<localidad>Madrid</localidad>
-		<cp>28575</cp>
+		<localidad>Valdemorillo</localidad>
+		<cp>28210</cp>
 		<telefonos>
 			<telefono tipo="fijo">917568495</telefono>
 			<telefono tipo="movil">675845943</telefono>

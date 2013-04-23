@@ -1,15 +1,16 @@
-// Consulta 1: Listar el nombre de las agencias
+// Consulta 1
 for $a in doc('agencia.xml')//agencias/agencia
 let $b := doc('inmueble.xml')//anuncios/anuncio[@idagencia = $a/@id]
 where $a/provincia = 'Madrid'
 return <agencia>{$a/nombre}<anuncios>{count($b)}</anuncios></agencia>
 
-// Consulta 2: Listar todos los anuncios de la primera agencia
+// Consulta 2
 for $a in doc('inmueble.xml')//anuncios/anuncio[@operacion = 'alquiler'][@tipo = 'pisos']
 let $b := doc('agencia.xml')//agencias/agencia[@id = $a/@idagencia]
-where $a/caracteristicas/caracteristica[@nombre = 'dormitorios'][@valor = 2]
-return <pisos>{$a/provincia, $a/localidad, $a/superficie, $a/precio}<estado>{$a/@estado}</estado>
-		<calefaccion>{$a/caracteristicas/caracteristica[@nombre = 'calefaccion']}</calefaccion><agencia>{$b/nombre}</agencia></pisos>
+where $a/caracteristicas/caracteristica[@nombre = 'dormitorios'][@valor > 2]
+return <pisos>{$a/provincia, $a/localidad, $a/superficie, $a/precio}<estado>{data($a/@estado)}</estado>
+    	<calefaccion>{data($a/caracteristicas/caracteristica[@nombre = 'calefaccion']/@valor)}</calefaccion>
+        <agencia>{$b/nombre}</agencia></pisos>
 
 //Consulta 3
 
