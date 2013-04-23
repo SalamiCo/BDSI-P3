@@ -1,8 +1,8 @@
 // Consulta 1: Listar el nombre de las agencias
-for $a in doc('agencia.xml')//agencias
+for $a in doc('agencia.xml')//agencias/agencia
 let $b := doc('inmueble.xml')//anuncios/anuncio[@idagencia = $a/@id]
-where $a/agencias/provincia = 'Madrid'
-return <agencia><nombre>{$a/agencia/nombre}</nombre><anuncios>{count($b)}</anuncios></agencia>
+where $a/provincia = 'Madrid'
+return <agencia>{$a/nombre}<anuncios>{count($b)}</anuncios></agencia>
 
 // Consulta 2: Listar todos los anuncios de la primera agencia
 
