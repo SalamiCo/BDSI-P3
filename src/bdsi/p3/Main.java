@@ -115,14 +115,14 @@ public class Main {
                     
                     // Leemos las consultas línea a línea
                     String line;
-                    String title=null;
+                    String title = null;
                     while (null != (line = input.readLine().trim())) {
                         if (!line.equals("")) {
                             if (line.startsWith("//")) {
                                 title = line.substring(2);
                                 
                             } else {
-                                if ( title== null ) {
+                                if (title == null) {
                                     title = String.format("Consulta %d:", num);
                                 }
                                 

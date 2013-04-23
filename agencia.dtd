@@ -1,28 +1,18 @@
-<!DOCTYPE agencia [
-	<!ELEMENT agencia (nombre+, direccion?, provincia+, localidad?, cp?, telefono*, email+, web?)>
+<!ELEMENT agencias (agencia*)>
 
-	<!ELEMENT nombre (#PCDATA)>
-	<!ELEMENT direccion (#PCDATA)>
-	<!ELEMENT provincia (#PCDATA)>
-	<!ELEMENT localidad (#PCDATA)>
-	<!ELEMENT cp (#PCDATA)>
-	<!ELEMENT telefono (#PCDATA)>
-	<!ELEMENT email (#PCDATA)>
-	<!ELEMENT web (#PCDATA)>
+<!ELEMENT agencia (nombre, direccion?, provincia, localidad?, cp?, telefonos?, email, web?)>
 
-	<!ATTLIST agencia id ID #REQUIRED>
-	<!ATTLIST telefono tipo (movil | fijo | fax) "movil">
-	<!ATTLIST email contacto CDATA #REQUIRED>
-]>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT provincia (#PCDATA)>
+<!ELEMENT localidad (#PCDATA)>
+<!ELEMENT cp (#PCDATA)>
+<!ELEMENT telefonos (telefono*)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT web (#PCDATA)>
 
-EJEMPLO
-<agencia id=""> ID OBLIGATORIO
-	<nombre> </nombre> OBLIGATORIO
-	<direccion> </direccion> 
-	<provincia> </provincia> OBLIGATORIO
-	<localidad> </localidad>
-	<cp> </cp>
-	<telefono> </telefono> OPCIONAL -> SE PUEDE REGISTRAR UNO O VARIOS QUE PUEDEN SER MOVIL, FIJO O FAX, PODRIA NO REGISTRARSE NINGUN TELEFONO -> meter lo del fax... como atributo o como elemento?
-	<email> </email> OBLIGATORIO -> SE TIENE QUE REGISTRAR LA PERSONA DE CONTACTO A LA QUE VA DIRIGIDO EL CORREO -> persona contacto como atributo o elemento?
-	<web> </web>
-</agencia>
+<!ELEMENT telefono (#PCDATA)>
+
+<!ATTLIST agencia id ID #REQUIRED>
+<!ATTLIST telefono tipo (movil | fijo | fax) "movil">
+<!ATTLIST email contacto CDATA #REQUIRED>
